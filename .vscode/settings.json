@@ -1,0 +1,15 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "master_piece",
+      "group": "master-piece-rails",
+      "database": "master_piece_development",
+      "username": "orgha",
+      "password": "ImportPaymentDaily!"
+    }
+  ]
+}
