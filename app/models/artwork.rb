@@ -4,6 +4,5 @@ class Artwork < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   validates :title, presense: true, length: { minimum: 3, maximum: 255 }
-  validates :image_url, presense: true
-  validates :user_id, presense: true
+  validates :image_url, :user_id, presense: true
 end
