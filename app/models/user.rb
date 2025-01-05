@@ -11,7 +11,7 @@ class User < ApplicationRecord
   validates :name, presence: true, uniqueness: true, length: { minimum: 3, maximum: 50 }
   validates :password, presence: true, length: { minimum: 6 }, on: :create
 
-  enum role: { user: "user", artist: "artist", admin: "admin" }
+  enum role: { user: 0, artist: 1, admin: 2 }
 
   validates :role, inclusion: { in: roles.keys }
 end
