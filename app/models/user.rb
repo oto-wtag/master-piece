@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+
   has_one :artist_detail, dependent: :destroy
   has_many :artworks
   has_many :followers, foreign_key: :follower_user
@@ -9,9 +14,6 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :name, presence: true, uniqueness: true, length: { minimum: 3, maximum: 50 }
-  validates :password, presence: true, length: { minimum: 6 }, on: :create
-
-  enum role: { user: 0, artist: 1, admin: 2 }
-
-  validates :role, inclusion: { in: roles.keys }
+  
+  #enum role: { user: 0, artist: 1, admin: 2 }
 end
