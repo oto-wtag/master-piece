@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
 
   has_one :artist_detail, dependent: :destroy
@@ -14,6 +14,10 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :name, presence: true, uniqueness: true, length: { minimum: 3, maximum: 50 }
-  
-  #enum role: { user: 0, artist: 1, admin: 2 }
+
+  # enum role: { user: 0, artist: 1, admin: 2 }
+
+  def send_confirmation_instructions
+    UserMailerJob.perform_later(self)
+  end
 end
