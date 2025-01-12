@@ -2,13 +2,14 @@
     
     <section class="md:w-1/3 mb-20">
         <%= form_with(model: @artwork, local: true) do |form| %>
-        
-             <% if @artwork.errors.any? %>
-                <div class="alert alert-error mb-4 p-4 bg-red-100 text-red-700 border border-red-400 rounded">
+
+            <% if @artwork.errors.any? %>
+                <div id="error_explanation" class="mb-5 font-light text-sm">
+                    <h2 class="text-red-600 mb-3">Faced <%= pluralize(@artwork.errors.count, "error") %>:</h2>
                     <ul>
-                        <% @artwork.errors.full_messages.each do |message| %>
-                            <li><%= message %></li>
-                        <% end %>
+                    <% @artwork.errors.full_messages.each do |message| %>
+                        <li class="text-rose-600 list-disc"><%= message %></li>
+                    <% end %>
                     </ul>
                 </div>
             <% end %>

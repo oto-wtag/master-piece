@@ -18,7 +18,7 @@ class ArtworksController < ApplicationController
       redirect_to artworks_path, notice: "Artwork was successfully created."
     else
       @artworks = Artwork.includes(image_attachment: :blob).all.order(created_at: :desc)
-      render :index
+      render :index, status: :unprocessable_entity
     end
   end
 
