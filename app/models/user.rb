@@ -12,10 +12,10 @@ class User < ApplicationRecord
   has_many :comments
   has_many :notifications
 
+  enum :role, { user: 0, artis: 1, admin: 2 }
+
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :name, presence: true, uniqueness: true, length: { minimum: 3, maximum: 50 }
-
-  # enum role: { user: 0, artist: 1, admin: 2 }
 
   def send_confirmation_instructions
     UserMailerJob.perform_later(self)
