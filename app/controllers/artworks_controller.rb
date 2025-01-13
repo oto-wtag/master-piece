@@ -1,8 +1,8 @@
 class ArtworksController < ApplicationController
-  before_action :set_artwork, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_artwork, only: [ :show, :edit, :update, :destroy, :like ]
 
   def index
-    @artworks = Artwork.includes(image_attachment: :blob).all.order(created_at: :desc)
+    @artworks = Artwork.includes(image_attachment: :blob, likes: :user).all.order(created_at: :desc)
     @artwork = Artwork.new
   end
 
@@ -14,7 +14,7 @@ class ArtworksController < ApplicationController
     if @artwork.save
       redirect_to artworks_path, notice: "Artwork was successfully created."
     else
-      @artworks = Artwork.includes(image_attachment: :blob).all.order(created_at: :desc)
+      @artworks = Artwork.includes(image_attachment: :blob,  likes: :user).all.order(created_at: :desc)
       render :index, status: :unprocessable_entity
     end
   end
@@ -36,6 +36,15 @@ class ArtworksController < ApplicationController
     else
       redirect_to artworks_path, alert: "Failed to delete artwork."
     end
+  end
+
+  def like
+    if current_user.liked_artworks.include?(@artwork)
+      current_user.liked_artworks.delete(@artwork)
+    else
+      current_user.liked_artworks << @artwork
+    end
+    redirect_to request.referer || artworks_path
   end
 
   private

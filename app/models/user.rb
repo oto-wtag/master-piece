@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :comments
   has_many :notifications
 
+  has_many :liked_artworks, through: :likes, source: :artwork
+
   enum :role, { user: 0, artist: 1, admin: 2 }
 
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: URI::MailTo::EMAIL_REGEXP }

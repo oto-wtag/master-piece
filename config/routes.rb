@@ -5,7 +5,11 @@ Rails.application.routes.draw do
 
   get "up" => "rails/health#show", as: :rails_health_chec
 
-  resources :artworks
+  resources :artworks do
+    member do
+      post :like
+    end
+  end
 
   root to: "artworks#index"
 end
