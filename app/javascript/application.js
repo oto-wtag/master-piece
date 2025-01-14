@@ -13,3 +13,13 @@ document.addEventListener("turbo:submit-start", (event) => {
     }
   }
 });
+
+function editComment(commentId) {
+  console.log("clicked");
+  const commentContent = document.getElementById(
+    `comment-content-${commentId}`
+  );
+  const commentForm = document.getElementById("comment-form");
+  commentForm.comment_id.value = commentId;
+  commentForm.content.value = commentContent.textContent;
+}

@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     member do
       post :like
     end
+
+    resources :comments, only: [ :create, :destroy, :edit, :update ]
   end
 
   root to: "artworks#index"

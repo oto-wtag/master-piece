@@ -87,12 +87,7 @@
                         <h6 class="font-semibold"><%= artwork.title %></h6>
                         <p class="font-light"><%= artwork.description %></p>
                     </div>
-                    <div>
-                        <div class="flex gap-2 font-light">
-                            <h6>User One:</h6>
-                            <p>Comment Details</p>
-                        </div>
-                    </div>
+                    <%= render "comments", artwork: artwork %>
                 </div>
             </div>
         <%end%>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_12_080152) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_14_052537) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -68,7 +68,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_12_080152) do
     t.bigint "artwork_id", null: false
     t.bigint "user_id", null: false
     t.text "content"
-    t.integer "replied_to_comment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["artwork_id"], name: "index_comments_on_artwork_id"
@@ -133,7 +132,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_12_080152) do
   add_foreign_key "artist_details", "users"
   add_foreign_key "artworks", "users"
   add_foreign_key "comments", "artworks"
-  add_foreign_key "comments", "comments", column: "replied_to_comment_id"
   add_foreign_key "comments", "users"
   add_foreign_key "followers", "users", column: "follower_user_id"
   add_foreign_key "followers", "users", column: "following_user_id"
