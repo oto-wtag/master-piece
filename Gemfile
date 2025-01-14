@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "bootsnap", require: false
+gem "devise"
 gem "importmap-rails"
 gem "jbuilder"
 gem "kamal", require: false
@@ -8,6 +9,7 @@ gem "pg", "~> 1.1"
 gem "propshaft"
 gem "puma", ">= 5.0"
 gem "rails", "~> 8.0.1"
+gem "sidekiq"
 gem "solid_cable"
 gem "solid_cache"
 gem "solid_queue"

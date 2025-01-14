@@ -24,7 +24,10 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <%= render "shared/header" %>
+    <main class="container mx-auto py-8 flex flex-col">
+      <p class="notice text-green-400"><%= notice %></p>
+      <p class="alert text-rose-600"><%= alert %></p>
       <%= yield %>
     </main>
   </body>
