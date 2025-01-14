@@ -16,7 +16,13 @@ class CommentsController < ApplicationController
   end
 
   def update
+    if @comment.update(comment_params)
+      redirect_to artwork_path(@artwork), notice: "Comment was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
+
 
   def destroy
     if @comment.destroy
