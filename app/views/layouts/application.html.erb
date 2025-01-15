@@ -17,7 +17,6 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
@@ -25,10 +24,11 @@
 
   <body>
     <%= render "shared/header" %>
-    <main class="container mx-auto py-8 flex flex-col">
+    <main class="w-full max-w-5xl mx-auto px-5 py-8 flex flex-col" style="min-height: calc(100vh - 100px);">
       <p class="notice text-green-400"><%= notice %></p>
       <p class="alert text-rose-600"><%= alert %></p>
       <%= yield %>
     </main>
+    <%= render "shared/footer" %>
   </body>
 </html>

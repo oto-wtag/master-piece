@@ -1,0 +1,38 @@
+<div class="w-full flex flex-col justify-center items-center">
+    <div class="bg-background shadow-md px-3 py-6 sm:p-8 border sm:max-w-sm w-full rounded-xl">
+        <h2 class="text-2xl font-semibold mb-1">Edit Artwork</h2>
+        <p className="text-slate-400 text-sm">Update the details of your artwork here!</p>
+
+        <%= form_with(model: @artwork, local: true, class: 'w-full space-y-4') do |form| %>
+            <% if @artwork.errors.any? %>
+                <div id="error_explanation" class="mb-5 font-light text-sm">
+                    <h2 class="text-red-600 mb-3">Faced <%= pluralize(@artwork.errors.count, "error") %>:</h2>
+                    <ul>
+                    <% @artwork.errors.full_messages.each do |message| %>
+                        <li class="text-rose-600"><%= message %></li>
+                    <% end %>
+                    </ul>
+                </div>
+            <% end %>
+
+            <div class="field w-full space-y-2">
+                <%= form.label :title %><br />
+                <%= form.text_field :title, class: "form-control", class: 'w-full rounded-md'  %>
+            </div>
+
+            <div class="field w-full space-y-2">
+                <%= form.label :description %><br />
+                <%= form.text_area :description, class: "form-control", class: 'w-full rounded-md'  %>
+            </div>
+
+            <div class="field w-full space-y-2">
+                <%= form.label :image %><br />
+                <%= form.file_field :image, class: "form-control", class: 'w-full rounded-md'  %>
+            </div>
+
+            <div class="actions pt-3">
+                <%= form.submit "Update Artwork", class: "w-full py-2 px-4 bg-yellow-300 rounded-md cursor-pointer hover:bg-yellow-400" %>
+            </div>
+        <% end %>
+    </div>
+</div>

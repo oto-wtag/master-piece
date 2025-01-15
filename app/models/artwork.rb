@@ -3,6 +3,11 @@ class Artwork < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  validates :title, presense: true, length: { minimum: 3, maximum: 255 }
-  validates :image_url, :user_id, presense: true
+  has_many :liking_users, through: :likes, source: :user
+
+  has_one_attached :image
+
+  validates :title, presence: true, length: { minimum: 3, maximum: 255 }
+  validates :description, presence: true
+  validates :image, presence: true
 end
