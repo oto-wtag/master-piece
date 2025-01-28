@@ -38,7 +38,7 @@
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-2">
                         <div class="w-8 h-8 bg-black rounded-full"></div>
-                        <h6><%= artwork.user.name %></h6>
+                        <%= link_to artwork.user.name, user_path(artwork.user), class: "hover:underline" %>
                     </div>
 
                     <div class="flex items-center relative text-left dropdown">
