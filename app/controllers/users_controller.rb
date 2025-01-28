@@ -35,6 +35,17 @@ class UsersController < ApplicationController
     redirect_to request.referer || @user
   end
 
+  def destroy
+    if current_user == @user
+      current_user.destroy
+      flash[:notice] = "Your account has been successfully deleted."
+      redirect_to root_path
+    else
+      flash[:alert] = "You can only delete your own account."
+      redirect_to @user
+    end
+  end
+
   private
 
   def set_user
