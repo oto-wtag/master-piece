@@ -1,6 +1,7 @@
 class ArtworksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_artwork, only: [ :show, :edit, :update, :destroy, :like ]
+  before_action :authorize_artwork!
 
   def index
     @artworks = Artwork.includes(image_attachment: :blob, likes: :user).all.order(created_at: :desc)
@@ -49,6 +50,10 @@ class ArtworksController < ApplicationController
   end
 
   private
+
+  def authorize_artwork!
+    authorize! :manage, @artwork
+  end
 
   def set_artwork
     @artwork = Artwork.find(params[:id])

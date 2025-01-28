@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [ :show, :edit, :update, :follow ]
   before_action :authenticate_user!
+  before_action :authorize_user!
+  before_action :authorize_follow!
 
   def show
     @artist_detail = @user.artist_detail
@@ -47,6 +49,14 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def authorize_user!
+    authorize! :manage, @user
+  end
+
+  def authorize_follow!
+    authorize! :follow, @user
+  end
 
   def set_user
     @user = User.find(params[:id])

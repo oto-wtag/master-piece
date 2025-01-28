@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_artwork
   before_action :set_comment, only: [ :edit, :update, :destroy ]
+  before_action :authorize_comment!
 
   def create
     @comment = @artwork.comments.new(comment_params.merge(user_id: current_user.id))
@@ -44,5 +45,9 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:content)
+  end
+
+  def authorize_comment!
+    authorize! :manage, @comment
   end
 end

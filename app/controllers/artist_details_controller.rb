@@ -1,6 +1,7 @@
 class ArtistDetailsController < ApplicationController
   before_action :set_artist_detail, only: %i[edit update]
   before_action :authenticate_user!
+  before_action :authorize_artist!
 
   def new
     @artist_detail = ArtistDetail.new
@@ -29,6 +30,10 @@ class ArtistDetailsController < ApplicationController
   end
 
   private
+
+  def authorize_artist!
+    authorize! :manage, @artist_detail
+  end
 
   def set_artist_detail
     @artist_detail = ArtistDetail.find(params[:id])
