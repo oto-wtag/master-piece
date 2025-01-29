@@ -33,6 +33,7 @@ class ArtistDetailsController < ApplicationController
 
   def authorize_artist!
     authorize! :manage, @artist_detail
+    redirect_to root_path, alert: "Not authorized" unless @artist_detail.user == current_user
   end
 
   def set_artist_detail

@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [ :show, :edit, :update, :follow ]
   before_action :authenticate_user!
-  before_action :authorize_user!
-  before_action :authorize_follow!
+
 
   def show
+    authorize! :read, User
+
     @artist_detail = @user.artist_detail
     @artworks = @user.artworks
   end
@@ -13,6 +14,8 @@ class UsersController < ApplicationController
   end
 
   def update
+    authorize! :update, User
+
     if @user.update(user_params)
       redirect_to @user, notice: "Profile updated successfully."
     else
@@ -21,13 +24,16 @@ class UsersController < ApplicationController
   end
 
   def follow
+    authorize! :follow, User
+
     if current_user == @user
       flash[:alert] = "You cannot follow yourself."
       redirect_to request.referer || @user and return
     end
 
     if current_user.followed_users.include?(@user)
-      flash[:alert] = "You are already following this user."
+      current_user.followed_users.delete(@user)
+      flash[:notice] = "You have unfollowed #{@user.name}."
       redirect_to request.referer || @user and return
     end
 
@@ -38,6 +44,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    authorize! :destroy, User
+
     if current_user == @user
       current_user.destroy
       flash[:notice] = "Your account has been successfully deleted."
@@ -49,14 +57,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-  def authorize_user!
-    authorize! :manage, @user
-  end
-
-  def authorize_follow!
-    authorize! :follow, @user
-  end
 
   def set_user
     @user = User.find(params[:id])
