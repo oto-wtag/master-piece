@@ -5,7 +5,9 @@ class ArtworksController < ApplicationController
   def index
     authorize! :read, Artwork
 
-    @artworks = Artwork.includes(image_attachment: :blob, likes: :user).all.order(created_at: :desc)
+    @artworks = Artwork.includes(image_attachment: :blob, likes: :user)
+                    .where(user_id: current_user.followed_users.select(:id))
+                    .order(created_at: :desc)
     @artwork = Artwork.new
   end
 
