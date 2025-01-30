@@ -1,2 +1,140 @@
+---
 en:
-  hello: "Hello world"
+  profile:
+    show:
+      dropdown:
+        edit_profile: Edit Profile
+        delete_profile: Delete Profile
+        follow: Follow
+        unfollow: Unfollow
+    edit:
+      edit_profile: Edit Profile
+      edit_artist_profile: Edit Artist Profile
+      create_artist_profile: Create Artist Profile
+      title: Edit Profile
+      subtitle: Edit your personal profile
+      name: Name
+      email: Email
+      profile_photo: Profile Photo
+      phone_number: Phone Number
+      bio: Bio
+      active: Active
+      update_profile_button: Update Profile
+    artist_profile:
+      edit:
+        edit_profile: Edit Profile
+        edit_artist_details: Edit Artist Profile
+        title: Edit Artist Details
+        subtitle: Edit your artist details
+        instagram_link: Instagram Link
+        pinterest_link: Pinterest Link
+        dribbble_link: Dribbble Link
+        behance_link: Behance Link
+        etsy_link: Etsy Link
+        button_edit_details: Edit Artist Details
+      new:
+        edit_profile: Edit Profile
+        create_profile: Create Artist Profile
+        title: Add Artist Details
+        subtitle: Add artist details so users can find you faster
+        instagram_link: Instagram Link
+        pinterest_link: Pinterest Link
+        dribbble_link: Dribbble Link
+        behance_link: Behance Link
+        etsy_link: Etsy Link
+        button_create_artist_details: Create Artist Details
+
+  artworks:
+    show:
+      dropdown:
+        edit_artwork: Edit Artwork
+        delete_artwork: Delete Artwork
+      like:
+        be_first: Be the first to like this artwork
+        liked_this_artwork: liked this artwork
+        liked_users_count: "%{liked_users_count} people liked this artowrk"
+        other_likes_count: and %{other_likes_count} others
+        you: You
+    create:
+      create_post: Create Post
+      description: Description
+      image: Image
+      title: Title
+    read:
+      comments:
+        comment_button: Comment
+        delete: Delete
+        edit: Edit
+        leave_a_comment: Leave a comment...
+      dropdown:
+        delete_artwork: Delete Artwork
+        edit_artwork: Edit Artwork
+        view_details: View Details
+      like:
+        be_first: Be the first to like this artwork
+        liked_this_artwork: liked this artwork
+        liked_users_count: "%{liked_users_count} people liked this artowrk"
+        other_likes_count: and %{other_likes_count} others
+        you: You
+    edit:
+      artwork_form_title: Edit Artwork
+      artwork_form_subtitle: Update the details of your artwork here!
+      title: Title
+      description: Description
+      image: Image
+      button_update_artwork: Update Artwork
+  devise:
+    failure:
+      user:
+        invalid: Wrong email or password
+        not_found_in_database: Wrong email or password
+        unauthenticated: You must log in first
+    login:
+      dont_have_an_account: Don't have an account?
+      email: Email
+      log_in: Log In
+      password: Password
+      remember_me: Remember Me
+      subtitle: Sign in to access your account
+      title: Welcome Back!
+    sessions:
+      user:
+        signed_in: Hello, Welcome Back! You have signed in successfully!
+    shared:
+      did_not_receive_confirmation: Didn't receive confirmation instructions?
+      forgot_password: Forgot your password?
+      log_in: Log In
+      sign_up: Sign up
+    signup:
+      already_have_account: Already have an account?
+      email: Email
+      name: Name
+      password: Password
+      password_confirmation: Password confirmation
+      password_hint: "%{length} characters minimum"
+      role: Role
+      sign_up: Sign Up
+      subtitle: Create a new account and get started!
+      title: Sign Up
+  errors:
+    messages:
+      not_saved: Not saved
+  header:
+    my_profile: My Profile
+    sign_in: Log In
+    sign_out: Sign Out
+    sign_up: Sign Up
+    title: MasterPiece
+  comments:
+    edit:
+      like:
+        be_first: Be the first to like this artwork
+        liked_this_artwork: liked this artwork
+        liked_users_count: "%{liked_users_count} people liked this artowrk"
+        other_likes_count: and %{other_likes_count} others
+        you: You
+      form:
+        title: Edit Comment
+        subtitle: Update your comment
+        content: Content
+        button_update_comment: Update Comment

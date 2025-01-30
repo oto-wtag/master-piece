@@ -1,7 +1,7 @@
 <div class="w-full flex flex-col justify-center items-center">
     <div class="bg-background shadow-md px-3 py-6 sm:p-8 border sm:max-w-sm w-full rounded-xl">
-        <h2 class="text-2xl font-semibold mb-1">Edit Artwork</h2>
-        <p className="text-slate-400 text-sm">Update the details of your artwork here!</p>
+        <h2 class="text-2xl font-semibold mb-1"><%= I18n.t("artworks.edit.artwork_form_title") %></h2>
+        <p className="text-slate-400 text-sm"><%= I18n.t("artworks.edit.artwork_form_subtitle") %></p>
 
         <%= form_with(model: @artwork, local: true, class: 'w-full space-y-4') do |form| %>
             <% if @artwork.errors.any? %>
@@ -16,22 +16,22 @@
             <% end %>
 
             <div class="field w-full space-y-2">
-                <%= form.label :title %><br />
+                <%= form.label :title, I18n.t("artworks.edit.title") %><br />
                 <%= form.text_field :title, class: "form-control", class: 'w-full rounded-md'  %>
             </div>
 
             <div class="field w-full space-y-2">
-                <%= form.label :description %><br />
+                <%= form.label :description, I18n.t("artworks.edit.description") %><br />
                 <%= form.text_area :description, class: "form-control", class: 'w-full rounded-md'  %>
             </div>
 
             <div class="field w-full space-y-2">
-                <%= form.label :image %><br />
+                <%= form.label :image, I18n.t("artworks.edit.image") %><br />
                 <%= form.file_field :image, class: "form-control", class: 'w-full rounded-md'  %>
             </div>
 
             <div class="actions pt-3">
-                <%= form.submit "Update Artwork", class: "w-full py-2 px-4 bg-yellow-300 rounded-md cursor-pointer hover:bg-yellow-400" %>
+                <%= form.submit I18n.t("artworks.edit.button_update_artwork"), class: "w-full py-2 px-4 bg-yellow-300 rounded-md cursor-pointer hover:bg-yellow-400" %>
             </div>
         <% end %>
     </div>

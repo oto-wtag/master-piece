@@ -20,5 +20,7 @@ Rails.application.routes.draw do
 
   resources :artist_details
 
+  post "change_language", to: "application#change_language", as: :change_language
+
   root to: "artworks#index"
 end

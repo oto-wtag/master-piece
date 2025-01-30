@@ -1,14 +1,14 @@
 <div class="w-full flex">
   <div class="">
-    <%= link_to "Edit Profile", edit_user_path(current_user), class: "hover:underline", role: "menuitem" %>
-    <p class="underline">Edit Artist Profile</p>
+    <%= link_to I18n.t("profile.artist_profile.edit.edit_profile"), edit_user_path(current_user), class: "hover:underline", role: "menuitem" %>
+    <p class="underline"><%= I18n.t("profile.artist_profile.edit.edit_artist_details") %></p>
   </div>
 
   <div class=" flex-1 flex flex-col items-center justify-center">
     <div class=" bg-background shadow-md px-3 py-6 sm:p-8 border sm:max-w-sm w-full rounded-xl">
 
-      <h2 class="text-2xl font-semibold mb-1">Edit Artist Details</h2>
-      <p className="text-slate-400 text-sm">Edit artist details</p>
+      <h2 class="text-2xl font-semibold mb-1"><%= I18n.t("profile.artist_profile.edit.title") %></h2>
+      <p className="text-slate-400 text-sm"><%= I18n.t("profile.artist_profile.edit.subtitle") %></p>
       <%= form_with(model: @artist_detail, local: true, html: { class: "w-full space-y-4" } ) do |form| %>
         <% if @artist_detail.errors.any? %>
           <div class="errors">
@@ -22,32 +22,32 @@
         <% end %>
 
         <div class="field w-full space-y-2">
-          <%= form.label :instagram_link %>
+          <%= form.label :instagram_link, I18n.t("profile.artist_profile.edit.instagram_link") %>
           <%= form.text_field :instagram_link , class: 'w-full rounded-md' %>
         </div>
 
         <div class="field w-full space-y-2">
-          <%= form.label :pinterest_link %>
+          <%= form.label :pinterest_link, I18n.t("profile.artist_profile.edit.pinterest_link") %>
           <%= form.text_field :pinterest_link , class: 'w-full rounded-md' %>
         </div>
 
         <div class="field w-full space-y-2">
-          <%= form.label :dribble_link %>
+          <%= form.label :dribble_link, I18n.t("profile.artist_profile.edit.dribbble_link") %>
           <%= form.text_field :dribble_link , class: 'w-full rounded-md' %>
         </div>
 
         <div class="field w-full space-y-2">
-          <%= form.label :behance_link %>
+          <%= form.label :behance_link, I18n.t("profile.artist_profile.edit.behance_link") %>
           <%= form.text_field :behance_link , class: 'w-full rounded-md' %>
         </div>
 
         <div class="field w-full space-y-2">
-          <%= form.label :etsy_link %>
+          <%= form.label :etsy_link, I18n.t("profile.artist_profile.edit.etsy_link") %>
           <%= form.text_field :etsy_link , class: 'w-full rounded-md' %>
         </div>
 
         <div class="actions pt-3">
-          <%= form.submit "Edit Artist Details" , class: "w-full py-2 px-4 bg-yellow-300 rounded-md cursor-pointer"%>
+          <%= form.submit I18n.t("profile.artist_profile.edit.button_edit_details"), class: "w-full py-2 px-4 bg-yellow-300 rounded-md cursor-pointer"%>
         </div>
       <% end %>
 

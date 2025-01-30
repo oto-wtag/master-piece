@@ -1,0 +1,139 @@
+---
+es:
+  artworks:
+    create:
+      create_post: Crear publicación
+      description: Descripción
+      image: Imagen
+      title: Título
+    edit:
+      artwork_form_subtitle: "¡Actualiza los detalles de tu obra de arte aquí!"
+      artwork_form_title: Editar obra de arte
+      button_update_artwork: Actualizar obra de arte
+      description: Descripción
+      image: Imagen
+      title: Título
+    read:
+      comments:
+        comment_button: Comentario
+        delete: Borrar
+        edit: Editar
+        leave_a_comment: Deja un comentario...
+      dropdown:
+        delete_artwork: Eliminar obra de arte
+        edit_artwork: Editar obra de arte
+        view_details: Ver detalles
+      like:
+        be_first: Sé el primero en darle me gusta a esta obra de arte
+        liked_this_artwork: Me gustó esta obra de arte
+        liked_users_count: A %{liked_users_count} personas les gustó esta obra
+        other_likes_count: y %{other_likes_count} más
+        you: Tú
+    show:
+      dropdown:
+        delete_artwork: Eliminar obra de arte
+        edit_artwork: Editar obra de arte
+      like:
+        be_first: Sé el primero en darle me gusta a esta obra de arte
+        liked_this_artwork: Me gustó esta obra de arte
+        liked_users_count: A %{liked_users_count} personas les gustó esta obra
+        other_likes_count: y %{other_likes_count} más
+        you: Tú
+  comments:
+    edit:
+      form:
+        button_update_comment: Actualizar comentario
+        content: Contenido
+        subtitle: Actualiza tu comentario
+        title: Editar comentario
+      like:
+        be_first: Sé el primero en darle me gusta a esta obra de arte
+        liked_this_artwork: Me gustó esta obra de arte
+        liked_users_count: A %{liked_users_count} personas les gustó esta obra
+        other_likes_count: y %{other_likes_count} más
+        you: Tú
+  devise:
+    failure:
+      user:
+        invalid: Correo electrónico o contraseña incorrectos
+        not_found_in_database: Correo electrónico o contraseña incorrectos
+        unauthenticated: Debes iniciar sesión primero
+    login:
+      dont_have_an_account: "¿No tienes una cuenta?"
+      email: Correo electrónico
+      log_in: Acceso
+      password: Contraseña
+      remember_me: Acuérdate de mí
+      subtitle: Inicie sesión para acceder a su cuenta
+      title: "¡Bienvenido de nuevo!"
+    sessions:
+      user:
+        signed_in: Hola, ¡bienvenido de nuevo! ¡Has iniciado sesión con éxito!
+    shared:
+      did_not_receive_confirmation: "¿No recibiste instrucciones de confirmación?"
+      forgot_password: "¿Olvidaste tu contraseña?"
+      log_in: Acceso
+      sign_up: Inscribirse
+    signup:
+      already_have_account: "¿Ya tienes una cuenta?"
+      email: Correo electrónico
+      name: Nombre
+      password: Contraseña
+      password_confirmation: Confirmación de contraseña
+      password_hint: Mínimo %{length} caracteres
+      role: Role
+      sign_up: Inscribirse
+      subtitle: "¡Crea una nueva cuenta y comienza!"
+      title: Inscribirse
+  errors:
+    messages:
+      not_saved: No guardado
+  header:
+    my_profile: Mi perfil
+    sign_in: Acceso
+    sign_out: Desconectar
+    sign_up: Inscribirse
+    title: Obra maestra
+  profile:
+    artist_profile:
+      edit:
+        behance_link: Enlace de Behance
+        button_edit_details: Editar detalles del artista
+        dribbble_link: Enlace de Dribbble
+        edit_artist_details: Editar perfil de artista
+        edit_profile: Editar perfil
+        etsy_link: Enlace de Etsy
+        instagram_link: Enlace de Instagram
+        pinterest_link: Enlace de Pinterest
+        subtitle: Edita tus datos de artista
+        title: Editar detalles del artista
+      new:
+        behance_link: Enlace de Behance
+        button_create_artist_details: Crear detalles del artista
+        create_profile: Crear perfil de artista
+        dribbble_link: Enlace de Dribbble
+        edit_profile: Editar perfil
+        etsy_link: Enlace de Etsy
+        instagram_link: Enlace de Instagram
+        pinterest_link: Enlace de Pinterest
+        subtitle: Agrega detalles del artista para que los usuarios puedan encontrarlo más rápido
+        title: Agregar detalles del artista
+    edit:
+      active: Activo
+      bio: Biografía
+      create_artist_profile: Crear perfil de artista
+      edit_artist_profile: Editar perfil de artista
+      edit_profile: Editar perfil
+      email: Correo electrónico
+      name: Nombre
+      phone_number: Número de teléfono
+      profile_photo: Foto de perfil
+      subtitle: Edita tu perfil personal
+      title: Editar perfil
+      update_profile_button: Actualizar perfil
+    show:
+      dropdown:
+        delete_profile: Eliminar perfil
+        edit_profile: Editar perfil
+        follow: Seguir
+        unfollow: Dejar de seguir

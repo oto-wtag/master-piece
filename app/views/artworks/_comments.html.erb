@@ -1,8 +1,8 @@
 <div class="space-y-2">
     <%= form_with(model: [artwork, Comment.new], local: true) do |form| %>
         <div class="flex items-start gap-2 mt-3">
-            <%= form.text_area :content, class: "w-full rounded-md p-2", placeholder: "Leave a comment..." %>
-            <%= form.submit "Comment", class: "py-2 px-4 bg-yellow-300 rounded-md cursor-pointer hover:bg-yellow-400 transition-all" %>
+            <%= form.text_area :content, class: "w-full rounded-md p-2", placeholder: I18n.t("artworks.read.comments.leave_a_comment") %>
+            <%= form.submit I18n.t("artworks.read.comments.comment_button"), class: "py-2 px-4 bg-yellow-300 rounded-md cursor-pointer hover:bg-yellow-400 transition-all" %>
         </div>
     <% end %>
 
@@ -17,8 +17,8 @@
                 </span>
                 <% if current_user.id == comment.user.id %>
                     <div class="flex items-center text-xs gap-2 text-gray-500">
-                        <%= link_to 'Edit', edit_artwork_comment_path(artwork, comment) %>
-                        <%= button_to "Delete", artwork_comment_path(artwork, comment), method: :delete, form: { data: { turbo_confirm: "Are you sure you want to delete this artwork?" } }, class: "text-red-500 hover:underline" %>
+                        <%= link_to I18n.t("artworks.read.comments.edit"), edit_artwork_comment_path(artwork, comment), class: "hover:underline" %>
+                        <%= button_to I18n.t("artworks.read.comments.delete"), artwork_comment_path(artwork, comment), method: :delete, form: { data: { turbo_confirm: "Are you sure you want to delete this artwork?" } }, class: "text-red-500 hover:underline" %>
                     </div>
                 <% end %>
             </div>

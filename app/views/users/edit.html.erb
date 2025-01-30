@@ -1,11 +1,11 @@
 <div class="w-full flex">
   <div class="">
-    <p>Edit Profile</p>
+    <p><%= I18n.t('profile.edit.edit_profile') %></p>
     <% if @user.role === "artist" %>
       <% if @user.artist_detail.present? %>
-        <%= link_to "Edit Artist Profile", edit_artist_detail_path(@user.artist_detail), class: "hover:underline" %>
+        <%= link_to I18n.t('profile.edit.edit_artist_profile'), edit_artist_detail_path(@user.artist_detail), class: "hover:underline" %>
       <% else %>
-        <%= link_to "Create Artist Profile", new_artist_detail_path, class: "hover:underline" %>
+        <%= link_to I18n.t('profile.edit.create_artist_profile'), new_artist_detail_path, class: "hover:underline" %>
       <% end %>
     <% end %>
   </div>
@@ -13,22 +13,22 @@
   <div class=" flex-1 flex flex-col items-center justify-center">
     <div class=" bg-background shadow-md px-3 py-6 sm:p-8 border sm:max-w-sm w-full rounded-xl">
 
-      <h2 class="text-2xl font-semibold mb-1">Edit Profile</h2>
-      <p className="text-slate-400 text-sm">Edit your personal profile</p>
+      <h2 class="text-2xl font-semibold mb-1"><%= I18n.t('profile.edit.title') %></h2>
+      <p className="text-slate-400 text-sm"><%= I18n.t('profile.edit.subtitle') %></p>
 
       <%= form_with model: @user, local: true, html: { class: "w-full space-y-4" } do |form| %>
         <div class="field w-full space-y-2">
-          <%= form.label :name, "Name" %>
+          <%= form.label :name, I18n.t('profile.edit.name') %>
           <%= form.text_field :name, class: 'w-full rounded-md' %>
         </div>
 
         <div class="field w-full space-y-2">
-          <%= form.label :email, "Email" %>
+          <%= form.label :email, I18n.t('profile.edit.email') %>
           <%= form.email_field :email, class: 'w-full rounded-md' %>
         </div>
 
         <div class="field w-full space-y-2">
-          <%= form.label :profile_photo, "Profile Photo" %>
+          <%= form.label :profile_photo, I18n.t('profile.edit.profile_photo') %>
           <% if @user.profile_photo.attached? %>
             <div>
               <%= image_tag @user.profile_photo.variant(resize_to_limit: [150, 150]), class: "profile-pic-preview" %>
@@ -38,22 +38,22 @@
         </div>
 
         <div class="field w-full space-y-2">
-          <%= form.label :phone_number, "Phone Number" %>
+          <%= form.label :phone_number, I18n.t('profile.edit.phone_number') %>
           <%= form.telephone_field :phone_number, class: 'w-full rounded-md' %>
         </div>
 
         <div class="field w-full space-y-2">
-          <%= form.label :bio, "Bio" %>
+          <%= form.label :bio, I18n.t('profile.edit.bio') %>
           <%= form.text_area :bio, class: 'w-full rounded-md' %>
         </div>
 
         <div class="field w-full space-y-2">
-          <%= form.label :is_active, "Active" %>
+          <%= form.label :is_active, I18n.t('profile.edit.active')  %>
           <%= form.check_box :is_active %>
         </div>
 
         <div class="actions pt-3">
-          <%= form.submit "Update Profile" , class: "w-full py-2 px-4 bg-yellow-300 rounded-md cursor-pointer"%>
+          <%= form.submit I18n.t('profile.edit.update_profile_button') , class: "w-full py-2 px-4 bg-yellow-300 rounded-md cursor-pointer"%>
         </div>
       <% end %>
 

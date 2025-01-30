@@ -1,0 +1,139 @@
+---
+zh-CN:
+  artworks:
+    create:
+      create_post: 创建帖子
+      description: 描述
+      image: 图像
+      title: 标题
+    edit:
+      artwork_form_subtitle: 在此更新你的艺术作品的详细信息！
+      artwork_form_title: 编辑作品
+      button_update_artwork: 更新艺术品
+      description: 描述
+      image: 图像
+      title: 标题
+    read:
+      comments:
+        comment_button: 评论
+        delete: 删除
+        edit: 编辑
+        leave_a_comment: 发表评论...
+      dropdown:
+        delete_artwork: 删除作品
+        edit_artwork: 编辑作品
+        view_details: 查看详细信息
+      like:
+        be_first: 成为第一个喜欢这件艺术品的人
+        liked_this_artwork: 喜欢这件艺术品
+        liked_users_count: "%{liked_users_count} 人喜欢此作品"
+        other_likes_count: 以及其他 %{other_likes_count}
+        you: 你
+    show:
+      dropdown:
+        delete_artwork: 删除作品
+        edit_artwork: 编辑作品
+      like:
+        be_first: 成为第一个喜欢这件艺术品的人
+        liked_this_artwork: 喜欢这件艺术品
+        liked_users_count: "%{liked_users_count} 人喜欢此作品"
+        other_likes_count: 以及其他 %{other_likes_count} 人
+        you: 你
+  comments:
+    edit:
+      form:
+        button_update_comment: 更新评论
+        content: 内容
+        subtitle: 更新您的评论
+        title: 編輯評論
+      like:
+        be_first: 成为第一个喜欢这件艺术品的人
+        liked_this_artwork: 喜欢这件艺术品
+        liked_users_count: "%{liked_users_count} 人喜欢此作品"
+        other_likes_count: 以及其他 %{other_likes_count}
+        you: 你
+  devise:
+    failure:
+      user:
+        invalid: 邮箱或密码错误
+        not_found_in_database: 邮箱或密码错误
+        unauthenticated: 您必须先登录
+    login:
+      dont_have_an_account: 沒有帳戶？
+      email: 电子邮件
+      log_in: 登录
+      password: 密码
+      remember_me: 记住账号
+      subtitle: 登录以访问您的账户
+      title: 欢迎回来！
+    sessions:
+      user:
+        signed_in: 您好，欢迎回来！您已成功登录！
+    shared:
+      did_not_receive_confirmation: 没有收到确认指示？
+      forgot_password: 忘记密码了吗？
+      log_in: 登录
+      sign_up: 报名
+    signup:
+      already_have_account: 已有账户？
+      email: 电子邮件
+      name: 姓名
+      password: 密码
+      password_confirmation: 密码确认
+      password_hint: 最少 %{length} 个字符
+      role: 角色
+      sign_up: 报名
+      subtitle: 创建新帐户并开始吧！
+      title: 报名
+  errors:
+    messages:
+      not_saved: 未保存
+  header:
+    my_profile: 我的个人资料
+    sign_in: 登录
+    sign_out: 登出
+    sign_up: 报名
+    title: 杰作
+  profile:
+    artist_profile:
+      edit:
+        behance_link: Behance 链接
+        button_edit_details: 编辑艺术家详细信息
+        dribbble_link: Dribbble 链接
+        edit_artist_details: 编辑艺术家简介
+        edit_profile: 編輯資料
+        etsy_link: Etsy 链接
+        instagram_link: Instagram 链接
+        pinterest_link: Pinterest 链接
+        subtitle: 编辑您的艺术家详细信息
+        title: 编辑艺术家详细信息
+      new:
+        behance_link: Behance 链接
+        button_create_artist_details: 创建艺术家详细信息
+        create_profile: 创建艺术家档案
+        dribbble_link: Dribbble 链接
+        edit_profile: 編輯資料
+        etsy_link: Etsy 链接
+        instagram_link: Instagram 链接
+        pinterest_link: Pinterest 链接
+        subtitle: 添加艺术家详细信息，以便用户可以更快地找到您
+        title: 添加艺术家详细信息
+    edit:
+      active: 积极的
+      bio: 个人简介
+      create_artist_profile: 创建艺术家档案
+      edit_artist_profile: 编辑艺术家资料
+      edit_profile: 編輯資料
+      email: 电子邮件
+      name: 姓名
+      phone_number: 电话号码
+      profile_photo: 个人资料照片
+      subtitle: 编辑您的个人资料
+      title: 編輯資料
+      update_profile_button: 更新个人资料
+    show:
+      dropdown:
+        delete_profile: 删除个人资料
+        edit_profile: 編輯資料
+        follow: 跟随
+        unfollow: 取消关注

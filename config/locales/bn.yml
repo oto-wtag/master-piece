@@ -1,0 +1,139 @@
+---
+bn:
+  artworks:
+    create:
+      create_post: পোস্ট তৈরি করুন
+      description: বর্ণনা
+      image: ছবি
+      title: শিরোনাম
+    edit:
+      artwork_form_subtitle: এখানে আপনার শিল্পকর্মের বিশদ আপডেট করুন!
+      artwork_form_title: আর্টওয়ার্ক সম্পাদনা করুন
+      button_update_artwork: আর্টওয়ার্ক আপডেট করুন
+      description: বর্ণনা
+      image: ছবি
+      title: শিরোনাম
+    read:
+      comments:
+        comment_button: মন্তব্য করুন
+        delete: মুছে দিন
+        edit: সম্পাদনা করুন
+        leave_a_comment: একটি মন্তব্য করুন...
+      dropdown:
+        delete_artwork: আর্টওয়ার্ক মুছুন
+        edit_artwork: আর্টওয়ার্ক সম্পাদনা করুন
+        view_details: বিস্তারিত দেখুন
+      like:
+        be_first: এই শিল্পকর্ম পছন্দ প্রথম হতে
+        liked_this_artwork: এই শিল্পকর্ম পছন্দ
+        liked_users_count: "%{liked_users_count} লোকেরা এই আর্টওয়ার্ক পছন্দ করেছে৷"
+        other_likes_count: এবং %{other_likes_count} অন্যান্য
+        you: আপনি
+    show:
+      dropdown:
+        delete_artwork: আর্টওয়ার্ক মুছুন
+        edit_artwork: আর্টওয়ার্ক সম্পাদনা করুন
+      like:
+        be_first: এই শিল্পকর্ম পছন্দ প্রথম হতে
+        liked_this_artwork: এই শিল্পকর্ম পছন্দ
+        liked_users_count: "%{liked_users_count} লোকেরা এই আর্টওয়ার্ক পছন্দ করেছে৷"
+        other_likes_count: এবং %{other_likes_count} অন্যান্য
+        you: আপনি
+  comments:
+    edit:
+      form:
+        button_update_comment: আপডেট মন্তব্য
+        content: বিষয়বস্তু
+        subtitle: আপনার মন্তব্য আপডেট
+        title: মন্তব্য সম্পাদনা করুন
+      like:
+        be_first: এই শিল্পকর্ম পছন্দ প্রথম হতে
+        liked_this_artwork: এই শিল্পকর্ম পছন্দ
+        liked_users_count: "%{liked_users_count} লোকেরা এই আর্টওয়ার্ক পছন্দ করেছে৷"
+        other_likes_count: এবং %{other_likes_count} অন্যান্য
+        you: আপনি
+  devise:
+    failure:
+      user:
+        invalid: ভুল ইমেইল বা পাসওয়ার্ড
+        not_found_in_database: ভুল ইমেইল বা পাসওয়ার্ড
+        unauthenticated: আপনাকে প্রথমে লগ ইন করতে হবে
+    login:
+      dont_have_an_account: একটি অ্যাকাউন্ট নেই?
+      email: ইমেইল
+      log_in: লগ ইন করুন
+      password: পাসওয়ার্ড
+      remember_me: আমাকে মনে রেখো
+      subtitle: আপনার অ্যাকাউন্ট অ্যাক্সেস করতে সাইন ইন করুন
+      title: আবার স্বাগতম!
+    sessions:
+      user:
+        signed_in: হ্যালো, আবার স্বাগতম! আপনি সফলভাবে সাইন ইন করেছেন!
+    shared:
+      did_not_receive_confirmation: নিশ্চিতকরণ নির্দেশাবলী পাননি?
+      forgot_password: আপনার পাসওয়ার্ড ভুলে গেছেন?
+      log_in: লগ ইন করুন
+      sign_up: সাইন আপ করুন
+    signup:
+      already_have_account: ইতিমধ্যে একটি অ্যাকাউন্ট আছে?
+      email: ইমেইল
+      name: নাম
+      password: পাসওয়ার্ড
+      password_confirmation: পাসওয়ার্ড নিশ্চিতকরণ
+      password_hint: ন্যূনতম %{length} অক্ষর
+      role: ভূমিকা
+      sign_up: সাইন আপ করুন
+      subtitle: একটি নতুন অ্যাকাউন্ট তৈরি করুন এবং শুরু করুন!
+      title: সাইন আপ করুন
+  errors:
+    messages:
+      not_saved: সংরক্ষিত হয়নি
+  header:
+    my_profile: আমার প্রোফাইল
+    sign_in: লগ ইন করুন
+    sign_out: সাইন আউট
+    sign_up: সাইন আপ করুন
+    title: মাস্টারপিস
+  profile:
+    artist_profile:
+      edit:
+        behance_link: Behance লিঙ্ক
+        button_edit_details: শিল্পীর বিবরণ সম্পাদনা করুন
+        dribbble_link: ড্রিবল লিঙ্ক
+        edit_artist_details: শিল্পী প্রোফাইল সম্পাদনা করুন
+        edit_profile: প্রোফাইল সম্পাদনা করুন
+        etsy_link: Etsy লিঙ্ক
+        instagram_link: ইনস্টাগ্রাম লিঙ্ক
+        pinterest_link: Pinterest লিঙ্ক
+        subtitle: আপনার শিল্পীর বিবরণ সম্পাদনা করুন
+        title: শিল্পীর বিবরণ সম্পাদনা করুন
+      new:
+        behance_link: Behance লিঙ্ক
+        button_create_artist_details: শিল্পীর বিবরণ তৈরি করুন
+        create_profile: শিল্পী প্রোফাইল তৈরি করুন
+        dribbble_link: ড্রিবল লিঙ্ক
+        edit_profile: প্রোফাইল সম্পাদনা করুন
+        etsy_link: Etsy লিঙ্ক
+        instagram_link: ইনস্টাগ্রাম লিঙ্ক
+        pinterest_link: Pinterest লিঙ্ক
+        subtitle: শিল্পীর বিবরণ যোগ করুন যাতে ব্যবহারকারীরা আপনাকে দ্রুত খুঁজে পেতে পারেন
+        title: শিল্পীর বিবরণ যোগ করুন
+    edit:
+      active: সক্রিয়
+      bio: বায়ো
+      create_artist_profile: শিল্পী প্রোফাইল তৈরি করুন
+      edit_artist_profile: শিল্পী প্রোফাইল সম্পাদনা করুন
+      edit_profile: প্রোফাইল সম্পাদনা করুন
+      email: ইমেইল
+      name: নাম
+      phone_number: ফোন নম্বর
+      profile_photo: প্রোফাইল ছবি
+      subtitle: আপনার ব্যক্তিগত প্রোফাইল সম্পাদনা করুন
+      title: প্রোফাইল সম্পাদনা করুন
+      update_profile_button: প্রোফাইল আপডেট করুন
+    show:
+      dropdown:
+        delete_profile: প্রোফাইল মুছুন
+        edit_profile: প্রোফাইল সম্পাদনা করুন
+        follow: অনুসরণ করুন
+        unfollow: আনফলো

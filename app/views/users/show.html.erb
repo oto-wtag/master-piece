@@ -42,8 +42,8 @@
                 </button>
                 <div class="opacity-0 invisible dropdown-menu py-2 transition-all duration-300 transform origin-top-right -translate-y-2 scale-95">
                     <div class="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y rounded-md shadow-lg outline-none overflow-hidden" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
-                        <%= link_to "Edit Profile", edit_user_path(@user), class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 whitespace-nowrap", role: "menuitem" %>
-                        <%= button_to "Delete Profile", @user, method: :delete, form: { data: { turbo_confirm: "Are you sure you want to delete your profile?" } }, class: "text-start w-full block px-4 py-2 text-sm text-rose-600 hover:bg-gray-50 whitespace-nowrap  hover:bg-rose-600 hover:text-white", role: "menuitem" %>
+                        <%= link_to I18n.t('profile.show.dropdown.edit_profile'), edit_user_path(@user), class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 whitespace-nowrap", role: "menuitem" %>
+                        <%= button_to I18n.t('profile.show.dropdown.delete_profile'), @user, method: :delete, form: { data: { turbo_confirm: "Are you sure you want to delete your profile?" } }, class: "text-start w-full block px-4 py-2 text-sm text-rose-600 hover:bg-gray-50 whitespace-nowrap  hover:bg-rose-600 hover:text-white", role: "menuitem" %>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
     <% if current_user.id != @user.id && @user.role == 'artist' %>
         <div>
             <%= button_to follow_user_path(@user), method: :post, class: "py-2 px-4 bg-yellow-300 rounded-md cursor-pointer hover:bg-yellow-400 cursor-pointer flex-shrink-0 flex-grow-0 h-full flex items-center" do %>
-                <%= current_user.followed_users.include?(@user) ? 'Unfollow' : 'Follow' %>
+                <%= current_user.followed_users.include?(@user) ? I18n.t('profile.show.dropdown.unfollow') : I18n.t('profile.show.dropdown.follow') %>
             <% end %>
         </div>
     <% end %>

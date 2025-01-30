@@ -1,7 +1,14 @@
 <nav class="h-16 w-full shadow sticky top-0 bg-white z-50">
     <div class="w-full max-w-5xl mx-auto px-5 h-full flex items-center justify-between">
-        <h4><%= link_to "MasterPiece", root_path %></h4>
+        <h4><%= link_to I18n.t('header.title'), root_path %></h4>
         <div class="flex items-center space-x-5">
+
+          
+            <%= form_with(url: change_language_path, method: :post, local: true) do |form| %>
+                <%= form.select :locale, I18n.available_locales.map { |locale| [locale.capitalize, locale] }, { selected: I18n.locale }, { onchange: 'this.form.submit();' } %>
+            <% end %>
+         
+
             <%if current_user%>
                 <div class="flex items-center relative text-left dropdown">
                     <button class="inline-flex items-center gap-2 justify-center w-full p-1 text-sm font-medium  bg-white rounded-full hover:bg-gray-100 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117">
@@ -12,14 +19,14 @@
                     </button>
                     <div class="opacity-0 invisible dropdown-menu py-2 transition-all duration-300 transform origin-top-right -translate-y-2 scale-95">
                         <div class="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y rounded-md shadow-lg outline-none overflow-hidden" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
-                            <%= link_to "My Profile", user_path(current_user), class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 whitespace-nowrap", role: "menuitem" %>
-                            <%= button_to "Sign Out", destroy_user_session_path, method: 'delete', class: "text-start w-full block px-4 py-2 text-sm text-rose-600 hover:bg-gray-50 whitespace-nowrap hover:bg-rose-600 hover:text-white", role: "menuitem"  %>
+                            <%= link_to I18n.t('header.my_profile'), user_path(current_user), class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 whitespace-nowrap", role: "menuitem" %>
+                            <%= button_to I18n.t('header.sign_out'), destroy_user_session_path, method: 'delete', class: "text-start w-full block px-4 py-2 text-sm text-rose-600 hover:bg-gray-50 whitespace-nowrap hover:bg-rose-600 hover:text-white", role: "menuitem"  %>
                         </div>
                     </div>
                 </div>
             <%else%>
-                <%= link_to "Sign Up", new_user_registration_path %>
-                <%= link_to "Sign In", new_user_session_path %>
+                <%= link_to I18n.t('header.sign_up'), new_user_registration_path %>
+                <%= link_to I18n.t('header.sign_in'), new_user_session_path %>
             <%end%>
         </div>
     </div>
