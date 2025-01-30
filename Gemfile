@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "active_storage_validations"
 gem "bootsnap", require: false
+gem "cancancan"
 gem "devise"
 gem "image_processing", "~> 1.2"
 gem "importmap-rails"
