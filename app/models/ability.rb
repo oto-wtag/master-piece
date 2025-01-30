@@ -10,7 +10,7 @@ class Ability
 
     if user.artist?
       can :manage, ArtistDetail, user_id: user.id
-      can [ :update, :destroy ], Artwork, user_id: user.id
+      can :manage, Artwork, user_id: user.id
       can :like, Artwork
       can :create, Comment
       can [ :update, :destroy ], Comment, user_id: user.id
