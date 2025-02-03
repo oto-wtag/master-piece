@@ -18,6 +18,7 @@ class ArtworksController < ApplicationController
   end
 
   def show
+    authorize! :show, @artwork
   end
 
   def create
@@ -33,11 +34,11 @@ class ArtworksController < ApplicationController
   end
 
   def edit
-    authorize! :update, Artwork
+    authorize! :update, @artwork
   end
 
   def update
-    authorize! :update, Artwork
+    authorize! :update, @artwork
 
     if @artwork.update(artwork_params)
       redirect_to artworks_path, notice: "Artwork was successfully updated."
@@ -47,7 +48,7 @@ class ArtworksController < ApplicationController
   end
 
   def destroy
-    authorize! :destroy, Artwork
+    authorize! :destroy, @artwork
 
     if @artwork.destroy
       redirect_to artworks_path, notice: "Artwork was successfully deleted."
@@ -57,7 +58,7 @@ class ArtworksController < ApplicationController
   end
 
   def like
-    authorize! :like, Artwork
+    authorize! :like, @artwork
 
     if current_user.liked_artworks.include?(@artwork)
       current_user.liked_artworks.delete(@artwork)

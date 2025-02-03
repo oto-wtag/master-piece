@@ -1,7 +1,6 @@
 class ArtistDetailsController < ApplicationController
   before_action :set_artist_detail, only: %i[edit update]
   before_action :authenticate_user!
-  before_action :authorize_artist!
 
   def new
     @artist_detail = ArtistDetail.new
@@ -19,9 +18,11 @@ class ArtistDetailsController < ApplicationController
   end
 
   def edit
+    authorize! :update, @artist_detail
   end
 
   def update
+    authorize! :update, @artist_detail
     if @artist_detail.update(artist_detail_params)
       redirect_to user_path(current_user), notice: "Artist detail was successfully updated."
     else
@@ -30,11 +31,6 @@ class ArtistDetailsController < ApplicationController
   end
 
   private
-
-  def authorize_artist!
-    authorize! :manage, @artist_detail
-    redirect_to root_path, alert: "Not authorized" unless @artist_detail.user == current_user
-  end
 
   def set_artist_detail
     @artist_detail = ArtistDetail.find(params[:id])

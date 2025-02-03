@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [ :edit, :update, :destroy ]
 
   def create
-    authorize! :create, Comment
+    authorize! :create, @comment
 
     @comment = @artwork.comments.new(comment_params.merge(user_id: current_user.id))
     if @comment.save
@@ -15,10 +15,11 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    authorize! :update, @comment
   end
 
   def update
-    authorize! :update, Comment
+    authorize! :update, @comment
 
     if @comment.update(comment_params)
       redirect_to artwork_path(@artwork), notice: "Comment was successfully updated."
@@ -29,7 +30,7 @@ class CommentsController < ApplicationController
 
 
   def destroy
-    authorize! :destroy, Comment
+    authorize! :destroy, @comment
 
     if @comment.destroy
       redirect_to request.referer || artworks_path, notice: "Comment was successfully deleted."

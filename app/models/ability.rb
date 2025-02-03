@@ -9,23 +9,21 @@ class Ability
     end
 
     if user.artist?
+      can :create, Artwork
+      can :update, Artwork, user_id: user.id
+      can :destroy, Artwork, user_id: user.id
       can :manage, ArtistDetail, user_id: user.id
-      can :manage, Artwork, user_id: user.id
-      can :like, Artwork
-      can :create, Comment
-      can [ :update, :destroy ], Comment, user_id: user.id
-      can :follow, User
     end
 
     if user.user?
-      can :like, Artwork
-      can :create, Comment
-      can [ :update, :destroy ], Comment, user_id: user.id
       can :follow, User
     end
 
     can :read, Artwork
-    can :read, Comment
-    can :manage, User, user_id: user.id
+    can :read, User
+    can :like, Artwork
+    can :create, Comment
+    can [ :update, :destroy ], Comment, user_id: user.id
+    can :manage, User, id: user.id
   end
 end

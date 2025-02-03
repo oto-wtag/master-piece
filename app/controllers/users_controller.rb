@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_action :set_user, only: [ :show, :edit, :update, :follow ]
   before_action :authenticate_user!
 
-
   def show
     authorize! :read, User
 
@@ -11,10 +10,11 @@ class UsersController < ApplicationController
   end
 
   def edit
+    authorize! :update, @user
   end
 
   def update
-    authorize! :update, User
+    authorize! :update, @user
 
     if @user.update(user_params)
       redirect_to @user, notice: "Profile updated successfully."
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def follow
-    authorize! :follow, User
+    authorize! :follow, @user
 
     if current_user == @user
       flash[:alert] = "You cannot follow yourself."
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    authorize! :destroy, User
+    authorize! :destroy, @user
 
     if current_user == @user
       current_user.destroy
