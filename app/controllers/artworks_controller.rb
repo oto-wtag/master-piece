@@ -7,8 +7,14 @@ class ArtworksController < ApplicationController
 
     @artworks = Artwork.includes(image_attachment: :blob, likes: :user)
                     .where(user_id: current_user.followed_users.select(:id))
+                    .or(Artwork.where(user_id: current_user.id))
                     .order(created_at: :desc)
     @artwork = Artwork.new
+
+    @suggested_artists = User.where.not(id: current_user.id)
+                .where(role: "artist")
+                .order(Arel.sql("RANDOM()"))
+                .limit(3)
   end
 
   def show
@@ -27,6 +33,7 @@ class ArtworksController < ApplicationController
   end
 
   def edit
+    authorize! :update, Artwork
   end
 
   def update
