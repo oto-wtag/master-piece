@@ -27,6 +27,11 @@
 
             <div class="field w-full space-y-2">
                 <%= form.label :image, I18n.t("artworks.edit.image") %><br />
+                <% if @artwork.image.attached? %>
+                    <div class="h-12 aspect-square">
+                        <%= image_tag @artwork.image.present? ? @artwork.image : image_path('broken_image.png'), class: "w-full h-full object-cover object-center" %>
+                    </div>
+                <% end %>
                 <%= form.file_field :image, class: "form-control", class: 'w-full rounded-md'  %>
             </div>
 

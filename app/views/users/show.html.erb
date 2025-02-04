@@ -69,6 +69,8 @@
 
 <section class="mt-16 grid grid-cols-4 gap-3">
     <% @artworks.each do |artwork| %>
+    <div class="aspect-square">
         <%= link_to image_tag(artwork.image.present? ? artwork.image : image_path('no_artwork.png'), class: "w-full h-full object-cover object-center"), artwork_path(artwork) %>
+    </div>
     <% end %>
 </section>
