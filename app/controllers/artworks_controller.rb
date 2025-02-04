@@ -11,8 +11,9 @@ class ArtworksController < ApplicationController
                     .order(created_at: :desc)
     @artwork = Artwork.new
 
-    @suggested_artists = User.where.not(id: current_user.id)
-                .where(role: "artist")
+    @suggested_artists = User.where(role: "artist")
+                .where.not(id: current_user.id)
+                .where.not(id: Follower.where(following_user_id: current_user.id).select(:follower_user_id))
                 .order(Arel.sql("RANDOM()"))
                 .limit(3)
   end
