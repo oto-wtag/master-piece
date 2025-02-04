@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [ :edit, :update, :destroy ]
 
   def create
-    authorize! :create, @comment
+    authorize! :create, Comment
 
     @comment = @artwork.comments.new(comment_params.merge(user_id: current_user.id))
     if @comment.save
