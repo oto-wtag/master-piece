@@ -38,7 +38,9 @@
             <div class="">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-2">
-                        <div class="w-8 h-8 bg-black rounded-full"></div>
+                        <div class="w-8 h-8 rounded-full overflow-hidden">
+                            <%= image_tag artwork.user.profile_photo.present? ? artwork.user.profile_photo : image_path('no_user.png'), class: "w-full h-full object-cover object-center" %>
+                        </div>
                         <%= link_to artwork.user.name, user_path(artwork.user), class: "hover:underline" %>
                     </div>
 
