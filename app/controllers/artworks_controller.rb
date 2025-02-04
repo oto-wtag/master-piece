@@ -29,7 +29,10 @@ class ArtworksController < ApplicationController
     if @artwork.save
       redirect_to artworks_path, notice: "Artwork was successfully created."
     else
-      @artworks = Artwork.includes(image_attachment: :blob,  likes: :user).all.order(created_at: :desc)
+      @artworks = Artwork.includes(image_attachment: :blob, likes: :user)
+                    .where(user_id: current_user.followed_users.select(:id))
+                    .or(Artwork.where(user_id: current_user.id))
+                    .order(created_at: :desc)
       render :index, status: :unprocessable_entity
     end
   end
