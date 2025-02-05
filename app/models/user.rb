@@ -21,10 +21,10 @@ class User < ApplicationRecord
   validates :name, presence: true, uniqueness: true, length: { minimum: 3, maximum: 50 }
   validates :profile_photo, content_type: [ "image/png", "image/jpg", "image/jpeg" ], size: { less_than: 5.megabytes, message: "is too large" }
 
-  validates :phone_number, uniqueness: true, format: {
+  validates :phone_number, uniqueness: true, allow_blank: true, format: {
     with: /\A\+?\d{10,15}\z/,
     message: "must be a valid phone number (10-15 digits, optional + at start)"
-  }
+  }, if: -> { phone_number.present? }
 
   def send_confirmation_instructions
     UserMailerJob.perform_later(self)

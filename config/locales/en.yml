@@ -46,6 +46,8 @@ en:
 
   artworks:
     show:
+      suggested_artists:
+        title: Artists you might be intersted in
       dropdown:
         edit_artwork: Edit Artwork
         delete_artwork: Delete Artwork

@@ -103,7 +103,7 @@
     <% if current_user&.role == "user"%>
         <section class="md:w-1/3">
             <div class="border rounded-md p-3 shadow-md w-full">
-                <p class="text-md font-semibold">Artists you might be intersted in</p>
+                <p class="text-md font-semibold"><%= I18n.t('artworks.show.suggested_artists.title') %></p>
                 <% @suggested_artists.each do |user| %>
                     <div class="border rounded-md flex items-center gap-3 my-3 p-2">
                         <div class="h-12 aspect-square">

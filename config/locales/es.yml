@@ -39,6 +39,8 @@ es:
         liked_users_count: A %{liked_users_count} personas les gustó esta obra
         other_likes_count: y %{other_likes_count} más
         you: Tú
+      suggested_artists:
+        title: Artistas que te podrían interesar
   comments:
     edit:
       form:

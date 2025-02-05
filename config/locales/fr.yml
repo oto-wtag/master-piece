@@ -39,6 +39,8 @@ fr:
         liked_users_count: "%{liked_users_count} personnes ont aimé cette œuvre"
         other_likes_count: et %{other_likes_count} autres
         you: Toi
+      suggested_artists:
+        title: Artistes qui pourraient vous intéresser
   comments:
     edit:
       form:

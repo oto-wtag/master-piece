@@ -39,6 +39,8 @@ zh-CN:
         liked_users_count: "%{liked_users_count} 人喜欢此作品"
         other_likes_count: 以及其他 %{other_likes_count} 人
         you: 你
+      suggested_artists:
+        title: 您可能感兴趣的艺术家
   comments:
     edit:
       form:

@@ -39,6 +39,8 @@ bn:
         liked_users_count: "%{liked_users_count} লোকেরা এই আর্টওয়ার্ক পছন্দ করেছে৷"
         other_likes_count: এবং %{other_likes_count} অন্যান্য
         you: আপনি
+      suggested_artists:
+        title: যেসব শিল্পীর সাথে আপনার আগ্রহ থাকতে পারে
   comments:
     edit:
       form:
