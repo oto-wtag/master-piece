@@ -45,7 +45,7 @@ class ArtworksController < ApplicationController
     authorize! :update, @artwork
 
     if @artwork.update(artwork_params)
-      redirect_to artworks_path, notice: "Artwork was successfully updated."
+      redirect_to artwork_path, notice: "Artwork was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end

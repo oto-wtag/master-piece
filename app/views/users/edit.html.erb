@@ -17,6 +17,16 @@
       <p className="text-slate-400 text-sm"><%= I18n.t('profile.edit.subtitle') %></p>
 
       <%= form_with model: @user, local: true, html: { class: "w-full space-y-4" } do |form| %>
+        <% if @user.errors.any? %>
+                <div id="error_explanation" class="mb-5 font-light text-sm">
+                    <h2 class="text-red-600 mb-3">Faced <%= pluralize(@user.errors.count, "error") %>:</h2>
+                    <ul>
+                    <% @user.errors.full_messages.each do |message| %>
+                        <li class="text-rose-600"><%= message %></li>
+                    <% end %>
+                    </ul>
+                </div>
+            <% end %>
         <div class="field w-full space-y-2">
           <%= form.label :name, I18n.t('profile.edit.name') %>
           <%= form.text_field :name, class: 'w-full rounded-md' %>

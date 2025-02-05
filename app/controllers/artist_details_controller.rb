@@ -3,10 +3,12 @@ class ArtistDetailsController < ApplicationController
   before_action :authenticate_user!
 
   def new
+    authorize! :create, ArtistDetail
     @artist_detail = ArtistDetail.new
   end
 
   def create
+    authorize! :create, ArtistDetail
     @artist_detail = ArtistDetail.new(artist_detail_params)
     @artist_detail.user = current_user
 
@@ -18,10 +20,12 @@ class ArtistDetailsController < ApplicationController
   end
 
   def edit
+    authorize! :create, ArtistDetail
     authorize! :update, @artist_detail
   end
 
   def update
+    authorize! :create, ArtistDetail
     authorize! :update, @artist_detail
     if @artist_detail.update(artist_detail_params)
       redirect_to user_path(current_user), notice: "Artist detail was successfully updated."

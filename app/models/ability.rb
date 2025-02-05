@@ -13,6 +13,7 @@ class Ability
       can :update, Artwork, user_id: user.id
       can :destroy, Artwork, user_id: user.id
       can :manage, ArtistDetail, user_id: user.id
+      can :follow, User
     end
 
     if user.user?
