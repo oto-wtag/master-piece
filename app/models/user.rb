@@ -5,15 +5,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :artist_detail, dependent: :destroy
-  has_many :artworks
-  has_many :followers, foreign_key: :follower_user
-  has_many :following, class_name: "Follower", foreign_key: :following_user
-  has_many :followed_users, through: :following, source: :follower_user
-  has_many :likes
-  has_many :comments
-  has_many :notifications
-  has_one_attached :profile_photo
-  has_many :liked_artworks, through: :likes, source: :artwork
+  has_many :artworks, dependent: :destroy
+  has_many :followers, foreign_key: :follower_user, dependent: :destroy
+  has_many :following, class_name: "Follower", foreign_key: :following_user, dependent: :destroy
+  has_many :followed_users, through: :following, source: :follower_user, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :notifications, dependent: :destroy
+  has_one_attached :profile_photo, dependent: :destroy
+  has_many :liked_artworks, through: :likes, source: :artwork, dependent: :destroy
 
   enum :role, { user: 0, artist: 1, admin: 2 }
 

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :users, only: [ :show, :edit, :update, :destroy ] do
     member do
       post :follow
+      get "edit_password", to: "users#edit_user_password"
+      patch "update_password", to: "users#update_user_password"
     end
   end
 

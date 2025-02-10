@@ -1,6 +1,8 @@
 <div class="w-full flex">
   <div class="">
     <p><%= I18n.t('profile.edit.edit_profile') %></p>
+    <p><%= link_to 'Change Password', edit_password_user_path(@user), class: "hover:underline" %></p>
+
     <% if @user.role === "artist" %>
       <% if @user.artist_detail.present? %>
         <%= link_to I18n.t('profile.edit.edit_artist_profile'), edit_artist_detail_path(@user.artist_detail), class: "hover:underline" %>

@@ -42,7 +42,7 @@
         </div>
     </div>
     
-    <% if current_user.id == @user.id %>
+    <% if current_user.id == @user.id || current_user.role == 'admin' %>
         <div class="">
             <div class="flex items-center relative text-left dropdown">
                 <button class="inline-flex justify-center w-full p-1 text-sm font-medium  bg-white rounded-full hover:bg-gray-100 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117">

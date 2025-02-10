@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [ :show, :edit, :update, :follow ]
+  before_action :set_user, only: [ :show, :edit, :update, :destroy, :edit_user_password, :update_user_password, :follow ]
   before_action :authenticate_user!
 
   def show
@@ -20,6 +20,20 @@ class UsersController < ApplicationController
       redirect_to @user, notice: "Profile updated successfully."
     else
       render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def edit_user_password
+    authorize! :update, @user
+  end
+
+  def update_user_password
+    authorize! :update, @user
+
+    if @user.update_with_password(password_params)
+      redirect_to @user, notice: "Password updated successfully."
+    else
+      render :edit_user_password, status: :unprocessable_entity
     end
   end
 
@@ -66,5 +80,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :profile_photo, :phone_number, :bio, :is_active)
+  end
+
+  def password_params
+    params.require(:user).permit(:current_password, :password, :password_confirmation)
   end
 end

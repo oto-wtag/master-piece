@@ -1,6 +1,7 @@
 <div class="w-full flex">
   <div class="">
     <%= link_to I18n.t("profile.artist_profile.edit.edit_profile"), edit_user_path(current_user), class: "hover:underline", role: "menuitem" %>
+    <p><%= link_to 'Change Password', edit_password_user_path(current_user), class: "hover:underline" %></p>
     <p class="underline"><%= I18n.t("profile.artist_profile.edit.edit_artist_details") %></p>
   </div>
 
